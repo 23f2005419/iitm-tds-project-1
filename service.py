@@ -101,7 +101,7 @@ def fetch_text_from_image(image_path: str, task: str):
             "messages": [
                 {
                     "role": "system",
-                    "content": "Give the required data which is requested. Make the output as short as possible, one word if possible.",
+                    "content": "Given the image extract the data what is asked by the user. Make the output as short as possible, one word if possible.",
                 },
                 {
                     "role": "user",
@@ -163,6 +163,7 @@ def a2_format_with_prettier(file_path: str, prettier_version: str):
             ["npx", f"prettier@{prettier_version}", "--write", input_file],
             capture_output=True,
             text=True,
+            shell=True
         )
         if response.stdout:
             return response.stdout
