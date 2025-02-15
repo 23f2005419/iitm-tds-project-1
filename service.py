@@ -37,7 +37,7 @@ def create_openai_url_request_specfictask(user_input: str, task: str):
             "messages": [
                 {
                     "role": "system",
-                    "content": "DO ONLY WHAT IS ASKED\n YOUR output is part of a program, using tool functions "
+                    "content": "Perform only the specified task. Your output will be used in a program utilizing tool functions."
                     + task,
                 },
                 {"role": "user", "content": user_input},
@@ -101,7 +101,7 @@ def fetch_text_from_image(image_path: str, task: str):
             "messages": [
                 {
                     "role": "system",
-                    "content": "Given the image extract the data what is asked by the user. Make the output as short as possible, one word if possible.",
+                    "content": "Provide the required input concisely, ideally in one word.",
                 },
                 {
                     "role": "user",
