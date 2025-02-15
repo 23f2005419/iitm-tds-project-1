@@ -159,6 +159,8 @@ def a2_format_with_prettier(file_path: str, prettier_version: str):
         print("Path exisit - will perform prettier")
         input_file = path_verify(file_path, True)
         print(input_file)
+        install_prettier = subprocess.run(["curl", "npm","install","-g",f"prettier@{prettier_version}"],shell=True)
+        print(install_prettier)
         response = subprocess.run(
             ["npx", f"prettier@{prettier_version}", "--write", input_file],
             capture_output=True,
