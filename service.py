@@ -101,7 +101,7 @@ def fetch_text_from_image(image_path: str, task: str):
             "messages": [
                 {
                     "role": "system",
-                    "content": "Give the required data which is requested. If possible make the response crisp and short.",
+                    "content": "Give the required data which is requested. Make the output as short as possible, one word if possible.",
                 },
                 {
                     "role": "user",
@@ -311,7 +311,7 @@ def a8_extract_text_from_image(source_path: str, dest_path: str, task: str):
         raise Exception(e)
 
 
-def a9_find_similar_texts(source_path: str, dest_path: str, num_similar_texts: int):
+def a9_find_similar_texts(source_path: str, dest_path: str):
     input_file = path_verify(source_path, True)
     output_file = path_verify(dest_path, False)
 
@@ -331,7 +331,7 @@ def a9_find_similar_texts(source_path: str, dest_path: str, num_similar_texts: i
 
         print("most similarities ", most_similar_indices)
         similar_texts = []
-        for i in range(num_similar_texts):
+        for i in range(len(most_similar_indices)):
             similar_texts.append(documents[most_similar_indices[i]])
 
         with open(output_file, "w") as file:

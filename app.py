@@ -45,7 +45,7 @@ def create_openai_url_request(task: str):
         execute_query_and_write_result_func_def,
         create_index_from_files_func_def,
         extract_text_from_image,
-        find_similar_texts_func_def,
+        find_similar_texts_func_def
     ]
     data = {
         "model": "gpt-4o-mini",
@@ -76,7 +76,7 @@ function_to_Callable_map: Dict[str, Callable] = {
     "a7_text_extraction": a7_text_extraction,
     "a8_extract_text_from_image": a8_extract_text_from_image,
     "a9_find_similar_texts": a9_find_similar_texts,
-    "a10_execute_query_and_write_result": a10_execute_query_and_write_result,
+    "a10_execute_query_and_write_result": a10_execute_query_and_write_result
 }
 
 

@@ -233,7 +233,7 @@ find_similar_texts_func_def = {
     "type": "function",
     "function": {
         "name": "a9_find_similar_texts",
-        "description": "This function is used to find the most similar pair of texts in the given source path using embeddings and write the result in the specified location",
+        "description": "This function is used to find the most similar pair of texts in the given source path using embeddings and write the result in the specified location.",
         "parameters": {
             "type": "object",
             "properties": {
@@ -245,12 +245,8 @@ find_similar_texts_func_def = {
                     "type": "string",
                     "description": "The path to the file where the resulted text needs to written",
                 },
-                "num_similar_texts": {
-                    "type": "integer",
-                    "description": "The number of similar texts to find.",
-                },
             },
-            "required": ["source_path", "dest_path", "num_similar_texts"],
+            "required": ["source_path", "dest_path"],
             "additionalProperties": False,
         },
         "strict": True,
