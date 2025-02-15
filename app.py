@@ -124,7 +124,7 @@ async def run_task(task: str):
                             "status_code": 200,
                             "message": "Task executed Successfully",
                             "Method_Output": method_response,
-                            "json": response.json(),
+                            # "json": response.json(),
                         }
                     else:
                         print("Function", function_name, "not found")
